@@ -7,6 +7,7 @@
     <title>Salg</title>
     <script src="salg.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="./../../index.js"></script>
 </head>
 
 
@@ -26,6 +27,26 @@
     </div>
 
     <h1> SALG </h1>
+
+    <div class="item" id="item">
+        <h2>
+            Produkt til salg
+        </h2>
+    </div>
+
+    <form id="form" action="/opretvare">
+        <!-- Placeholder bruges til at vise, hvad der skal stå i indputsfeltet, indtil brugeren skriver noget -->
+        <input placeholder="Titel/Beskrivelse" type="input" id="titel"/>
+        <input placeholder="Pris" type="number" id="price"/>
+        <select id="categori">
+            <option value="Tøj">Tøj</option>
+            <option value="Sko">Sko</option>
+            <option value="Tasker">Tasker</option>
+        </select>
+        <br>
+        <input type="file" id="billede">
+        <input value="Submit" type="submit"/>
+    </form> 
 
 </body>
 
