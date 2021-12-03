@@ -3,33 +3,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("form").addEventListener("submit", (event) => {
       event.preventDefault();
 
-      // En variabel der hedder email, gennem 'document.getElementById', hvor vi heri skriver 'email' - 'value' for at hente email inputtet som brugeren har skrevet i vores opretbruger form
-      // En variabel der hedder password, gennem 'document.getElementById', hvor vi heri skriver 'password' - 'value' for at hente email inputtet som brugeren har skrevet i vores opretbruger form
       const titel = document.getElementById("titel").value;
       const price = document.getElementById("price").value;
       const categori = document.getElementById("categori").value;
-  
-      // variabel der hedder user, '{}' bruges til at forklare til js, at man laver JSON objekter - heri email og password
+      const billede = document.getElementById("billede").value;
+    
+
       const product = {
         titel: titel,
         price: price,
         categori: categori,
+        billede: billede,
       };
 
-      // efter brugeren har trykket submit, skal man kunne kalde endpointed, og herfra hentebrugen gennem fetch funktionen
-      // DET HER ER FEJLEN HVIS DER ER EN FELJ (link)
-      // POST metoden skal bruges, da der skal laves en bruger i JSON filen
-      // Herefter skrives der, at body'en er i form af JSON
         fetch("http://localhost:1300/vare/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
 
-        // Hvis man 'sender' ting over nettet, sakl man lave sit JSON objekt til en stregf - gemnnem 'stringyfy' - så serveren forstår objektet
-        // Herefter kalder man sit endpoint, gennem et promise 'then' ('lige nu har man ikke en værdi, men man "lover" at der kommer en værdi tilbage') 
-        // Når man får sin værdi tilbage (response fra serveren), så vil man igen lave det om til JSON (så det kan komme ind i databasen)
-        // Nu er response blevet defineret til et JSON objekt, og nu agere man på det, gennem at sende brugeren tilbage til vinduet 'login.html'-side
         body: JSON.stringify(product),
         })
         .then((response) => response.json())
@@ -39,25 +31,63 @@ document.addEventListener("DOMContentLoaded", (event) => {
           }
         })
 
-        // Her kan if else måske bruges
-        // Catch bruges til at definere hvad der skal ske, hvis der sker en fejl mellem client og server
-        // Heri skrives der, at der skla printes en alert til brugen hvis der skete en fejl
         .catch(() => {
           window.alert("Fejl");
         });
     });
+
+
+    document.getElementById("produkter").addEventListener("click", async() => {
+        const table = document.getElementById("vareTabel");
+
+        table.innerHTML = `
+        <tr>
+            <th>Titel og Beskrivelse  </th>
+            <th>Pris  </th>
+            <th>Kategori</th>
+            <th>Billede</th>
+        </tr>
+        `;
+
+        await fetch(
+            "http://localhost:1300/vare/Products", {
+                method: "GET",
+            })
+
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+            // virker hertil
+
+            Array.from("../../data/vare.json").forEach((products) => {
+                table.innerHTML +=
+                `
+            <tr> 
+                <td>${products.titel}</td>
+                <td>${products.price}</td>
+                <td>${products.categori}</td>
+                <td><img scr="${products.billede}" style="height:50px;width:50px;"</td>
+            `;
+            })
+        })
+
+        .catch(err => console.log(err));
+    })
+
   });
 
+
+
 /*
-// slet vare funktion
-document.addEventListener("DOMContentLoaded", (event) => {
-    /*const product = localStorage.getItem("product");
-    if (!product) {
-      location.href = "/salg.html";
-    }
+  document.addEventListener("DOMContentLoaded", (event) => {
   
-    document.getElementById("slet").addEventListener("submit", (event) => {
+    document.getElementById("deleteProduct").addEventListener("submit", (event) => {
       event.preventDefault();
+
+      const product = localStorage.getItem("product");
+        if (!product) {
+        location.href = "/salg.html";
+        }
 
       // man parser bruger inputtet i loclastorage til JSON
       const product = JSON.parse(localStorage.getItem("product"));
@@ -88,34 +118,66 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
+  */
+
 /*
-/task 6 
-function changeTextTwo(){
-    document.getElementById("textToSale").innerHTML = prompt("Beskrivelse af produkt");
+// vare post
+function getAllProductsWithCategory() {
+    const category = document.getElementById('categori').value;
+    console.log(category)
+
+
+    const titel = document.getElementById("titel").value;
+    const price = document.getElementById("price").value;
+    const categori = document.getElementById("categori").value;
+  
+
+    const product = {
+      titel: titel,
+      price: price,
+      categori: categori,
+    };
+
+    
+
+    fetch("http://localhost:1300/vare/getAllProducts", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.parse(product),
+        })
+
+        .then((response) => response.json())
+        .then((response) => {
+        if (response) {
+            console.log(response)
+
+            var str = '<ul>'
+
+            response.forEach(function() {
+                if(category === "all") {
+                    str += '<li>' + " " + titel + " " + categori + " " + price + '</li>';
+                } else if(categori === category) {
+                    str += '<li>' + " " + titel + " " + categori + " " + price + '</li>';
+                }
+            });
+
+            str += '</ul>'
+
+            document.getElementById("productContainer").innerHTML = str;
+        }
+    })
+
+    .catch(() => {
+        window.alert("Fejl");
+    })
 };
 
-document.getElementById('vareKnap').addEventListener('click', async () => {
-    let table = document.getElementById('vareTabel');
+/*
+document.getElementById("billede").addEventListener("change", function() {
+    console.log(this.files);
+});
+;*/
 
-    let result = await fetch('http://localhost:1300/vare', {method: 'GET'})
-        .then(res => res.json())
-        .catch(err => console.log(err))
-    
-    let tableHTML =
-        <tr>
-            <th>Kategori</th>
-            <th>Amount</th>
-        </tr>
-    ;
-
-    for(const vare in result){
-        tableHTML +=
-            <tr>
-                <td>${vare}</td>
-                <td>${result[vare]}</td>
-            </tr>
-        ;
-    }
-
-    table.innerHTML = tableHTML
-});*/

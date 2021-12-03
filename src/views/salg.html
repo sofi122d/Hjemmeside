@@ -28,25 +28,43 @@
 
     <h1> SALG </h1>
 
-    <div class="item" id="item">
         <h2>
-            Produkt til salg
+            Produkter til salg
         </h2>
-    </div>
 
-    <form id="form" action="/opretvare">
+    <form id="form" action="/opretvare" enctype="multipart/form-data" method="POST">
         <!-- Placeholder bruges til at vise, hvad der skal stå i indputsfeltet, indtil brugeren skriver noget -->
-        <input placeholder="Titel/Beskrivelse" type="input" id="titel"/>
-        <input placeholder="Pris" type="number" id="price"/>
-        <select id="categori">
+        Title: <input placeholder="Titel/Beskrivelse" type="input" id="titel"/>
+        <br>
+        Pris: <input placeholder="Pris" type="number" id="price"/>
+        <br>
+        Kategori: <select id="categori">
             <option value="Tøj">Tøj</option>
             <option value="Sko">Sko</option>
             <option value="Tasker">Tasker</option>
         </select>
         <br>
-        <input type="file" id="billede">
-        <input value="Submit" type="submit"/>
+        Billede: <input type="file" name="billede" id="billede">
+        <button type="submit">Opret</button>
+         <!-- <input value="Submit" type="submit"/> -->
     </form> 
+
+    <button id="produkter">Produkter</button>
+
+    <table id="vareTabel">
+
+    </table>
+
+
+    <form id="deleteProduct">
+        <input value="Slet produkter" type="submit"/>
+    </form>
+
+    
+    <script src="salg.js" async defer></script>
+
+
+
 
 </body>
 
