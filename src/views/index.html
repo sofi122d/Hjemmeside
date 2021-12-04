@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hjemmeside</title>
-    <script src="index.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,14 +21,27 @@
         <ul class="menulist">
             <li class="menuitems"><a href="/index.html">Hjem</a></li>
             <li class="menuitems"><a href="/salg.html">Nye salg</a></li>
+            <li class="menuitems"><a href="/vare.html">Produkter</a></li>
             <li style="float:right" class="menuitems"><a class="active" href="/profil.html"> Din profil</a></li>
         </ul>
 
     </div>
 
-    <form id="delete">
-        <input value="Delete" type="submit"/>
+
+
+    <form id='formOpdater' action='/opdater' method="PUT">
+        <br>
+        <label>Ny Email:</label>
+        <input placeholder="Ny Email" type="email" id="newEmail"/>
+        <br>
+        <label>Nyt password:</label>
+        <input placeholder="Nyt Password" type="password" id="newPassword"/>
+        <br>
+        <input value="Submit" type="submit" id="indsend"/>
     </form>
+
+    <script src="index.js"></script>
+
 
 </body>
 

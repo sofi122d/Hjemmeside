@@ -1,37 +1,39 @@
+/*//opdater bruger funktion/
 document.addEventListener("DOMContentLoaded", (event) => {
-    const user = localStorage.getItem("user");
-    if (!user) {
-      location.href = "/login.html";
-    }
-  
-    document.getElementById("delete").addEventListener("submit", (event) => {
+    document.getElementById("formOpdater").addEventListener('submit', async (event) => {
       event.preventDefault();
 
-      // man parser bruger inputtet i loclastorage til JSON
-      const user = JSON.parse(localStorage.getItem("user"));
+      const email = document.getElementById("newEmail").value;
+      const password = document.getElementById("newPassword").value;
+  
+      const update = {
+        email: email,
+        password: password,
+      };
 
-      // her kalder man endpointet, gennem metoden delete
-      fetch("http://localhost:1300/brugere/delete", {
-        method: "DELETE",
+        await fetch("http://localhost:1300/brugere/opdater", {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(user),
-      })
+        body: JSON.stringify(update),
 
-      // responset bliver lavet til html igen
-      // hvis der er response, så skal brugeren blive slettet fra localstorage
+
+        })
         .then((response) => response.json())
         .then((response) => {
           if (response) {
-            localStorage.removeItem("user");
-            location.href = "/login.html";
+            location.href = "/profil.html";
+            window.alert('Bruger er opdateret')
           }
         })
 
-        // hvis funktionen ikke går igennem, bruges catch til at definere, hvis der så skal ske - her "Fejl opstået"
+        // Her kan if else måske bruges
+        // Catch bruges til at definere hvad der skal ske, hvis der sker en fejl mellem client og server
+        // Heri skrives der, at der skla printes en alert til brugen hvis der skete en fejl
         .catch(() => {
-          window.alert("Fejl opstået");
+          window.alert("Fejl");
         });
-    });
-  });
+    }); 
+  }); 
+  */
