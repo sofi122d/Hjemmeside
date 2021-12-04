@@ -60,3 +60,38 @@ body {
     background-color: rgb(235, 235, 224);
     padding-block-end: 100%;
 }
+
+
+/* Product tabel */
+#table {
+    background-color: #889b88; 
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    width: 60%;
+    margin-left: 20%;
+}
+
+#table:hover {
+    background-color: #213522; 
+    color: white;
+  }
+
+#list {
+    border: 1px solid rgb(26, 34, 27);
+    border-collapse: collapse;
+    margin: auto;
+}
+
+tr, td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    width: 20%;
+  }
+
+  tr:hover {background-color: rgba(114, 156, 119, 0.404);}
