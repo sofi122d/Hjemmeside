@@ -13,6 +13,7 @@
 
 <body>
 
+    <!-- Menu bar i toppen -->    
     <div class="headeren">
         <img src="logo.png" alt="logo" id="logo">
         <h1 class="companyName">Buy N' Sell</h1>
@@ -22,33 +23,45 @@
         <ul class="menulist">
             <li class="menuitems"><a href="/index.html">Hjem</a></li>
             <li class="menuitems"><a href="/salg.html">Nye salg</a></li>
+            <li class="menuitems"><a href="/vare.html">Produkter</a></li>
             <li style="float:right" class="menuitems"><a class="active" href="/profil.html"> Din profil</a></li>
         </ul>
     </div>
 
+
+
+    <!-- Indholdet på siden --> 
     <h1> SALG </h1>
 
         <h2>
             Produkter til salg
         </h2>
 
-    <form id="form" action="/opretvare" enctype="multipart/form-data" method="POST">
-        <!-- Placeholder bruges til at vise, hvad der skal stå i indputsfeltet, indtil brugeren skriver noget -->
+
+     <!-- Form til opretning af nye produkter -->
+    <form id="formCreate" action="/opretvare" enctype="multipart/form-data" method="POST">
+
         Title: <input placeholder="Titel/Beskrivelse" type="input" id="titel"/>
         <br>
+
         Pris: <input placeholder="Pris" type="number" id="price"/>
         <br>
+
         Kategori: <select id="categori">
             <option value="Tøj">Tøj</option>
             <option value="Sko">Sko</option>
             <option value="Tasker">Tasker</option>
         </select>
         <br>
+
         Billede: <input type="file" name="billede" id="billede">
         <button type="submit">Opret</button>
          <!-- <input value="Submit" type="submit"/> -->
     </form> 
 
+
+
+    <!-- Tabel med produkter
     <button id="produkter">Produkter</button>
 
     <table id="vareTabel">
@@ -60,8 +73,8 @@
         <input value="Slet produkter" type="submit"/>
     </form>
 
-    
-    <script src="salg.js" async defer></script>
+
+    <script src="salg.js" async defer></script> -->
 
 
 

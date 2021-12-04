@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    document.getElementById("form").addEventListener("submit", (event) => {
+    document.getElementById("formCreate").addEventListener("submit", (event) => {
       event.preventDefault();
 
       const titel = document.getElementById("titel").value;
@@ -35,46 +35,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
           window.alert("Fejl");
         });
     });
+});
 
-
-    document.getElementById("produkter").addEventListener("click", async() => {
-        const table = document.getElementById("vareTabel");
-
-        table.innerHTML = `
-        <tr>
-            <th>Titel og Beskrivelse  </th>
-            <th>Pris  </th>
-            <th>Kategori</th>
-            <th>Billede</th>
-        </tr>
-        `;
-
-        await fetch(
-            "http://localhost:1300/vare/Products", {
-                method: "GET",
-            })
-
-        .then((res) => res.json())
-        .then((res) => {
-            console.log(res)
-            // virker hertil
-
-            Array.from("../../data/vare.json").forEach((products) => {
-                table.innerHTML +=
-                `
-            <tr> 
-                <td>${products.titel}</td>
-                <td>${products.price}</td>
-                <td>${products.categori}</td>
-                <td><img scr="${products.billede}" style="height:50px;width:50px;"</td>
-            `;
-            })
-        })
-
-        .catch(err => console.log(err));
-    })
-
-  });
 
 
 
@@ -119,65 +81,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
   */
-
-/*
-// vare post
-function getAllProductsWithCategory() {
-    const category = document.getElementById('categori').value;
-    console.log(category)
-
-
-    const titel = document.getElementById("titel").value;
-    const price = document.getElementById("price").value;
-    const categori = document.getElementById("categori").value;
-  
-
-    const product = {
-      titel: titel,
-      price: price,
-      categori: categori,
-    };
-
-    
-
-    fetch("http://localhost:1300/vare/getAllProducts", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.parse(product),
-        })
-
-        .then((response) => response.json())
-        .then((response) => {
-        if (response) {
-            console.log(response)
-
-            var str = '<ul>'
-
-            response.forEach(function() {
-                if(category === "all") {
-                    str += '<li>' + " " + titel + " " + categori + " " + price + '</li>';
-                } else if(categori === category) {
-                    str += '<li>' + " " + titel + " " + categori + " " + price + '</li>';
-                }
-            });
-
-            str += '</ul>'
-
-            document.getElementById("productContainer").innerHTML = str;
-        }
-    })
-
-    .catch(() => {
-        window.alert("Fejl");
-    })
-};
-
-/*
-document.getElementById("billede").addEventListener("change", function() {
-    console.log(this.files);
-});
-;*/
-
