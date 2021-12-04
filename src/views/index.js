@@ -1,17 +1,21 @@
-/*//opdater bruger funktion/
-document.addEventListener("DOMContentLoaded", (event) => {
-    document.getElementById("formOpdater").addEventListener('submit', async (event) => {
-      event.preventDefault();
+//opdater bruger funktion/
 
-      const email = document.getElementById("newEmail").value;
-      const password = document.getElementById("newPassword").value;
+
+const btn = document.getElementById('indsend');
+
+btn.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+
+      let email = document.getElementById("newEmail").value;
+      let password = document.getElementById("newPassword").value;
   
-      const update = {
+      var update = {
         email: email,
         password: password,
-      };
+        }
 
-        await fetch("http://localhost:1300/brugere/opdater", {
+        await fetch("http://localhost:1300/brugere/update", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -20,20 +24,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
         })
-        .then((response) => response.json())
-        .then((response) => {
-          if (response) {
-            location.href = "/profil.html";
-            window.alert('Bruger er opdateret')
-          }
+        .then((res) => res.json())
+        .then(data => {
+            window.location.href = "/index.html";
+            window.alert('Bruger er opdateret');
         })
 
-        // Her kan if else måske bruges
-        // Catch bruges til at definere hvad der skal ske, hvis der sker en fejl mellem client og server
-        // Heri skrives der, at der skla printes en alert til brugen hvis der skete en fejl
-        .catch(() => {
-          window.alert("Fejl");
+        .catch(err => {
+          window.alert("Fejl", err);
         });
-    }); 
-  }); 
-  */
+    });
