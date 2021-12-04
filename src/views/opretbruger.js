@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       };
 
       // efter brugeren har trykket submit, skal man kunne kalde endpointed, og herfra hentebrugen gennem fetch funktionen
-      // DET HER ER FEJLEN HVIS DER ER EN FELJ (link)
       // POST metoden skal bruges, da der skal laves en bruger i JSON filen
       // Herefter skrives der, at body'en er i form af JSON
         fetch("http://localhost:1300/brugere/create", {
