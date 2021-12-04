@@ -54,7 +54,7 @@ router.post("/login", (req, res) => {
 
 const fs = require('fs')
 
-router.put('/opdater', (req, res) => {
+router.put('/update', (req, res) => {
     let data = JSON.parse(fs.readFileSync('data/brugere.json'))
 
     for (let i = 0; i < data.length; i++) {
