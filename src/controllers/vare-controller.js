@@ -13,20 +13,58 @@ const dbvare = require("./../helpers/dbvare");
 
 
 router.post("/create", (req, res) => {
-  const product = new productModel(req.body.titel, req.body.price, req.body.categori);
+  const product = new productModel(req.body.titel, req.body.price, req.body.categori, req.body.billede);
   dbvare.saveProduct(product);
   res.status(200).send(true);
 });
 
 
 router.delete("/delete", (req, res) => {
-    const product = new productModel(req.body.titel, req.body.price, req.body.categori);
+    const product = new productModel(req.body.titel, req.body.price, req.body.categori, req.body.billede);
     dbvare.deleteProduct(product);
     res.status(200).send(true);
   });
 
 
+// post vare
+const fs = require('fs')
+
+router.get ('/items', async (req, res) => {
+    fs.readFile('data/vare.json', (err, data) => {
+        if (err) res.send(err);
+        res.status(200).send(data);
+    });
+});
+
+
+
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*// til vare siden (tabel funktioner)

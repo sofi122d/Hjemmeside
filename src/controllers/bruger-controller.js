@@ -4,15 +4,12 @@
 const express = require("express");
 const router = express.Router();
 
-/*router.get('/', (req, res) =>{
-    res.status(200).send(true)
-})*/
-
 // Her hentes den model der er blevet lavet i vores bruger.js
 const userModel = require("./../models/bruger");
 
 // her hentes db filen, for at kunne ændre i ens JSON fil, gennem DB funktionerne
 const db = require("./../helpers/db");
+
 
 // man bruger post, da man skal lave noget, som så vil køre indholdet i funktionen
 // fra html siden skal man have sendt email og password, ind til bruger-controller.js
@@ -53,6 +50,34 @@ router.post("/login", (req, res) => {
   }
 });
 
+
+
+const fs = require('fs')
+
+router.put('/opdater', (req, res) => {
+    let data = JSON.parse(fs.readFileSync('data/brugere.json'))
+
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].email == req.body.email) {
+            data[i].password == req.body.password;
+
+
+            fs.writeFile('data/brugere.json', JSON.stringify(data, null, 4), err => {
+                if(err) res.send(err);
+                res.send(data);
+            })
+        }
+    }
+});
+
+/*
+// opdater Bruger
+router.put("/update", (req, res) => {
+    const user = {email: req.body.email, password: req.body.password, oldEmail: req.body.oldEmail};
+    db.updateUser(user);
+    res.status(200).send("bruger er opdateret");
+  });
+  */
 
 // module.exports bruges til at exportere funktioner og funktionaliteter fra en fil
 module.exports = router;
