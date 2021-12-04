@@ -54,46 +54,5 @@ class DBvare {
 module.exports = new DBvare();
 
 
-/*
-class fileVare {
-        constructor() {
-            this.file = '../../data/vare.json'
-        }
-
-        read(){
-            let contents = fs.readFileSync(this.file)
-            return JSON.parse(contents)
-        }
-    
-        wrire(obj){
-            let current = this.read();
-            current.push(obj);
-            fs.writeFileSync(this.file, JSON.stringify(current));
-        }
-};
-
-module.exports = new fileVare();
-*/
-
- /*   getAllProducts(res) {
-        let rawData = fs.readFileSync(PRODUCT_FILE)
-        const parsedData = JSON.parse(rawData)
-        res.send(parsedData);
-        return;
-    }
 
   
-    getAllUsersProducts(res) {
-        const allProducts = fs.readFileSync('vare.json')
-        const parsedProducts = JSON.parse(allProducts);
-
-        var usersProducts = [];
-
-        for (let i = 0; i < parsedProducts[i].ownerEmail === loggedInUserEmail) {
-            usersProducts.push(parsedProducts[i]);
-        }
-    }
-
-    res.send(usersProducts);
-    return;
-    */
