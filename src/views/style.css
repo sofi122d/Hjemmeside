@@ -63,7 +63,7 @@ body {
 
 
 /* Product tabel */
-#table {
+.knapProdukter {
     background-color: #889b88; 
     border: none;
     border-radius: 12px;
@@ -73,11 +73,11 @@ body {
     display: inline-block;
     font-size: 16px;
     transition-duration: 0.2s;
-    width: 60%;
-    margin-left: 20%;
+    width: 17%;
+    margin-left: 6%;
 }
 
-#table:hover {
+.knapProdukter:hover {
     background-color: #213522; 
     color: white;
   }
