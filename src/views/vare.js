@@ -1,3 +1,4 @@
+// Se alle produkter
 const table = document.getElementById('table');
 const list = document.getElementById('list'); 
 
