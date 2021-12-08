@@ -71,6 +71,28 @@ body {
     border: solid rgba(15, 39, 17, 0.719) 5px;
 }
 
+/* input felter */
+.inputfelt {
+    background-color: whitesmoke;
+    border: solid thistle 2px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#categori {
+    background-color: whitesmoke;
+    border: solid thistle 2px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#billede {
+    background-color: whitesmoke;
+    border: solid thistle 2px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
 /* Product tabel */
 .knapProdukter {
     background-color: #889b88; 

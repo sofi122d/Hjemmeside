@@ -19,7 +19,7 @@ router.post("/create", (req, res) => {
 });
 
 
-router.delete("/delete", (req, res) => {
+router.delete("/deleteProduct", (req, res) => {
     const product = new productModel(req.body.titel, req.body.price, req.body.categori, req.body.billede, req.body.id);
     dbvare.deleteProduct(product);
     res.status(200).send(true);

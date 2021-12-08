@@ -48,24 +48,6 @@ class DB {
         this.users = this.users.filter((x) => x.email != user.email);
         this.saveFile(USER_FILE, JSON.stringify(this.users));
     }
-    
-    findUser(user) {
-        return this.users.find((x) => user.email == x.email);
-    }
-
-    updateUser(user){
-        for (let i=0; i < this.users.lenght; i++) {
-            console.log(this.user[i]);
-            console.log(user);
-
-            if (this.user[i].email == user.oldEmail) {
-                this.user[i].email = user.email;
-                this.user[i].password = user.password;
-            }
-        }
-        this.saveFile(USER_FILE, JSON.stringify(this.users));
-    }
-    
 };
 
 // Det her er en singleton -- laaangt over pensum, men et ret fedt term at fyre af

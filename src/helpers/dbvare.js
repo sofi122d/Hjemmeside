@@ -40,12 +40,8 @@ class DBvare {
     }
     
     deleteProduct(product) {
-        this.products = this.products.filter((x) => x.titel != product.titel);
+        this.products = this.products.filter((x) => x.id != product.id);
         this.saveFile(PRODUCT_FILE, JSON.stringify(this.products));
-    }
-    
-    findProduct(product) {
-        return this.products.find((x) => product.titel == x.titel);
     }
 };
 
