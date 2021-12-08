@@ -30,40 +30,40 @@
         </ul>
     </div>
 
+    <div class="backgroundBody">
+        <br>
+
+        <h1> SALG </h1>
+
+            <h2>
+                Sæt et nyt produkt til salg
+            </h2>
 
 
-    <!-- Indholdet på siden --> 
-    <h1> SALG </h1>
+            <form id="formCreate" action="/opretvare" enctype="multipart/form-data" method="POST" class="form">
 
-        <h2>
-            Sæt et nyt produkt til salg
-        </h2>
+                Id: <input placeholder="Id" type="number" id="id" class="inputfelt"/>
+                <br>
 
+                Title: <input placeholder="Titel/Beskrivelse" type="input" id="titel" class="inputfelt"/>
+                <br>
 
-     <!-- Form til opretning af nye produkter -->
-        <form id="formCreate" action="/opretvare" enctype="multipart/form-data" method="POST" class="form">
+                Pris: <input placeholder="Pris" type="number" id="price" class="inputfelt"/>
+                <br>
 
-            Id: <input placeholder="Id" type="number" id="id" class="inputfelt"/>
-            <br>
+                Kategori: <select id="categori">
+                    <option value="Tøj">Tøj</option>
+                    <option value="Sko">Sko</option>
+                    <option value="Tasker">Tasker</option>
+                </select>
+                <br>
 
-            Title: <input placeholder="Titel/Beskrivelse" type="input" id="titel" class="inputfelt"/>
-            <br>
-
-            Pris: <input placeholder="Pris" type="number" id="price" class="inputfelt"/>
-            <br>
-
-            Kategori: <select id="categori">
-                <option value="Tøj">Tøj</option>
-                <option value="Sko">Sko</option>
-                <option value="Tasker">Tasker</option>
-            </select>
-            <br>
-
-            Billede: <input type="file" name="billede" id="billede">
-            <br>
-            <button type="submit" class="knapProdukter">Opret</button>
-            <!-- <input value="Submit" type="submit"/> -->
-        </form> 
+                Billede: <input type="file" name="billede" id="billede">
+                <br>
+                <button type="submit" class="knap">Opret</button>
+                <!-- <input value="Submit" type="submit"/> -->
+            </form> 
+    </div>
 
 </body>
 

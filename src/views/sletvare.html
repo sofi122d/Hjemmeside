@@ -30,16 +30,29 @@
 
 
     
-    <!-- Indholdet på siden --> 
-    <h1> SLET PRODUKTER </h1>
+    <div class="backgroundBody">
+        <br>
 
-    <form id='formSletVare' class="form">
+        <h1> SLET PRODUKTER </h1>
+
+        <h2> 
+            Skriv Id nr. på den vare du gerne vil slette
+        </h2>
+
         <br>
-        <label>Id:</label>
-        <input placeholder="Id" type="number" id="id" class="inputfelt"/>
+            Kan du ikke huske Id nr. på din vare - <a id="mylink" href="./vare.html">så kan du finde det her</a>
         <br>
-        <input value="submit" type="submit" id="indsendVare" class="knapProdukter"/>
-    </form>
+        <br>
+
+        <form id='formSletVare' class="form">
+            <br>
+            <label>Id:</label>
+            <input placeholder="Id" type="number" id="id" class="inputfelt"/>
+            <br>
+            <input value="submit" type="submit" id="indsendVare" class="knap"/>
+        </form>
+
+    </div>
 
     <script src="sletvare.js"></script>
 

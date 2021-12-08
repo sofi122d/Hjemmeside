@@ -27,31 +27,35 @@
 
     </div>
 
-    <h1> OPDATER VARE </h1>
+    <div class="backgroundBody">
+        <br>
 
-    <form id='formOpdaterVare' class="form">
-        <br>
-        <label>Id:</label>
-        <input placeholder="Id" type="number" id="id" class="inputfelt"/>
-        <br>
-        <label>Ny Titel:</label>
-        <input placeholder="Nyt Titel" type="input" id="newTitel" class="inputfelt"/>
-        <br>
-        <label>Ny pris:</label>
-        <input placeholder="Nyt pris" type="input" id="newPrice" class="inputfelt"/>
-        <br>
-        <label>Ny Kategori:</label>
-        <select id="newCategori">
-            <option value="Tøj">Tøj</option>
-            <option value="Sko">Sko</option>
-            <option value="Tasker">Tasker</option>
-        </select>
-        <br>
-        <label>Nyt billede:</label>
-        <input type="file" name="newBillede" id="newBillede">
-        <br>
-        <input value="submit" type="submit" id="indsendVare" class="knapProdukter"/>
-    </form>
+        <h1> OPDATER VARE </h1>
+
+        <form id='formOpdaterVare' class="form">
+            <br>
+            <label>Id:</label>
+            <input placeholder="Id" type="number" id="id" class="inputfelt"/>
+            <br>
+            <label>Ny Titel:</label>
+            <input placeholder="Nyt Titel" type="input" id="newTitel" class="inputfelt"/>
+            <br>
+            <label>Ny pris:</label>
+            <input placeholder="Nyt pris" type="input" id="newPrice" class="inputfelt"/>
+            <br>
+            <label>Ny Kategori:</label>
+            <select id="newCategori">
+                <option value="Tøj">Tøj</option>
+                <option value="Sko">Sko</option>
+                <option value="Tasker">Tasker</option>
+            </select>
+            <br>
+            <label>Nyt billede:</label>
+            <input type="file" name="newBillede" id="newBillede">
+            <br>
+            <input value="submit" type="submit" id="indsendVare" class="knap"/>
+        </form>
+    </div>
 
     <script src="opdatervare.js"></script>
 

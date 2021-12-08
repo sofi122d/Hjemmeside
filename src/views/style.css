@@ -56,9 +56,9 @@ body {
 }
 
 /* Under menuen style */
-.body {
-    background-color: rgb(235, 235, 224);
-    padding-block-end: 100%;
+.backgroundBody {
+    background-image: url("backgroundImg.jpg");
+    height: 100%;
 }
 
 
@@ -94,7 +94,7 @@ body {
 }
 
 /* Product tabel */
-.knapProdukter {
+.knap {
     background-color: #889b88; 
     border: none;
     border-radius: 12px;
@@ -109,12 +109,13 @@ body {
     margin-bottom: 20px;
 }
 
-.knapProdukter:hover {
+.knap:hover {
     background-color: #213522; 
     color: white;
   }
 
 #list {
+    background: white;
     border: 1px solid rgb(26, 34, 27);
     border-collapse: collapse;
     margin: auto;

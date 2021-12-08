@@ -12,16 +12,32 @@
 
 <body>
 
-    <h1>Opret en ny bruger</h1>
+    <div class="headeren">
 
-    <form id='form' action="/opretbruger">
-        <!-- Placeholder bruges til at vise, hvad der skal stå i indputsfeltet, indtil brugeren skriver noget -->
-        <input placeholder="Email" type="email" id="email"/>
-        <input placeholder="Password" type="password" id="password"/>
-        <input value="Submit" type="submit"/>
-    </form>
+        <img src="logo.png" alt="logo" id="logo">
+        <h1 class="companyName">Buy N' Sell</h1>
+        <hr>
+    </div>
 
-    Har du allerede en bruger? <a id="mylink" href="./login.html"> Login her</a>
+    <div class="backgroundBody">
+        <br>
+
+        <h1>Opret en ny bruger</h1>
+
+        <form id='form' action="/opretbruger" class="form">
+            <!-- Placeholder bruges til at vise, hvad der skal stå i indputsfeltet, indtil brugeren skriver noget -->
+            Email:
+            <input placeholder="Email" type="email" id="email"/>
+            <br>
+            Password:
+            <input placeholder="Password" type="password" id="password"/>
+            <br>
+            <input value="Submit" type="submit" class="knap"/>
+            <br>
+            Har du allerede en bruger? <a id="mylink" href="./login.html"> Login her</a>
+            <br>
+        </form>
+    </div>
     
 </body>
 

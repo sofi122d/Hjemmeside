@@ -11,13 +11,13 @@ const productModel = require("./../models/vare");
 // her hentes db filen, for at kunne ændre i ens JSON fil, gennem DB funktionerne
 const dbvare = require("./../helpers/dbvare");
 
-
+/*
 router.post("/create", (req, res) => {
   const product = new productModel(req.body.titel, req.body.price, req.body.categori, req.body.billede, req.body.id);
   dbvare.saveProduct(product);
   res.status(200).send(true);
 });
-
+*/
 
 router.delete("/deleteProduct", (req, res) => {
     const product = new productModel(req.body.titel, req.body.price, req.body.categori, req.body.billede, req.body.id);

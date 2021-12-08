@@ -48,6 +48,10 @@ class DB {
         this.users = this.users.filter((x) => x.email != user.email);
         this.saveFile(USER_FILE, JSON.stringify(this.users));
     }
+    
+    findUser(user) {
+        return this.users.find((x) => user.email == x.email);
+    }
 };
 
 // Det her er en singleton -- laaangt over pensum, men et ret fedt term at fyre af

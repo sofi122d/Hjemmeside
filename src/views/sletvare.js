@@ -1,5 +1,5 @@
-const opdaterform = document.querySelector("formSletVare");
-opdaterform,addEventListener("submit", async(e) => {
+const sletform = document.querySelector("formSletVare");
+sletform,addEventListener("submit", async(e) => {
     e.preventDefault();
 
     let id = document.getElementById("id").value;

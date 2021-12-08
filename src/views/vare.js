@@ -78,7 +78,7 @@ const list = document.getElementById('list');
                         <td>${e.titel}</td>
                         <td>${e.price}</td>
                         <td>${e.categori}</td>
-                        <td><img scr="${e.billede}" style="height:50px;width:50px;"</td>
+                        <td> <img scr="${e.billede.replace('data/varebilleder/', '')}" style="height:50px;width:50px;"</td>
                     </tr>
                     `;
                 })
