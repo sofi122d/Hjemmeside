@@ -33,7 +33,7 @@ app.use("/vare", vareController);
 
 
 
-
+/*
 // form data
 app.use(express.urlencoded({ extended: false }));
 
@@ -50,6 +50,6 @@ const options = {
 }
 
 app.use(formData.parse(options));
+*/
 
-
-
+module.exports = app;
