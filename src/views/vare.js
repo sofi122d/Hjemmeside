@@ -15,6 +15,7 @@ const list = document.getElementById('list');
             .then(data => {
                 list.innerHTML =`
                 <tr>
+                    <th>Id  </th>
                     <th>Titel og Beskrivelse  </th>
                     <th>Pris  </th>
                     <th>Kategori</th>
@@ -26,6 +27,7 @@ const list = document.getElementById('list');
                     list.innerHTML +=
                     `
                     <tr>
+                        <td>${e.id}</td>
                         <td>${e.titel}</td>
                         <td>${e.price}</td>
                         <td>${e.categori}</td>
@@ -57,6 +59,7 @@ const list = document.getElementById('list');
             .then(data => {
                 list.innerHTML = `
                 <tr>
+                    <th>Id</th>
                     <th>Titel og Beskrivelse  </th>
                     <th>Pris  </th>
                     <th>Kategori</th>
@@ -71,6 +74,7 @@ const list = document.getElementById('list');
                     list.innerHTML +=
                     `
                     <tr>
+                        <td>${e.id}</td>
                         <td>${e.titel}</td>
                         <td>${e.price}</td>
                         <td>${e.categori}</td>
@@ -102,6 +106,7 @@ const list = document.getElementById('list');
                 .then(data => {
                     list.innerHTML = `
                     <tr>
+                        <th>Id  </th>
                         <th>Titel og Beskrivelse  </th>
                         <th>Pris  </th>
                         <th>Kategori</th>
@@ -116,6 +121,7 @@ const list = document.getElementById('list');
                         list.innerHTML +=
                         `
                         <tr>
+                            <td>${e.id}</td>
                             <td>${e.titel}</td>
                             <td>${e.price}</td>
                             <td>${e.categori}</td>
@@ -147,6 +153,7 @@ tableTasker.addEventListener('click', async (e) => {
         .then(data => {
             list.innerHTML = `
             <tr>
+                <th>Id  </th>
                 <th>Titel og Beskrivelse  </th>
                 <th>Pris  </th>
                 <th>Kategori</th>
@@ -161,6 +168,7 @@ tableTasker.addEventListener('click', async (e) => {
                 list.innerHTML +=
                 `
                 <tr>
+                    <td>${e.id}</td>
                     <td>${e.titel}</td>
                     <td>${e.price}</td>
                     <td>${e.categori}</td>

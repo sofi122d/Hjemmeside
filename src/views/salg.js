@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("formCreate").addEventListener("submit", (event) => {
       event.preventDefault();
 
+      const id = document.getElementById("id").value;
       const titel = document.getElementById("titel").value;
       const price = document.getElementById("price").value;
       const categori = document.getElementById("categori").value;
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     
 
       const product = {
+        id: id,
         titel: titel,
         price: price,
         categori: categori,
