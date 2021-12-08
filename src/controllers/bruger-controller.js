@@ -59,7 +59,7 @@ router.put('/update', (req, res) => {
 
     for (let i = 0; i < data.length; i++) {
         if (data[i].email == req.body.email) {
-            data[i].password == req.body.password;
+            data[i].password = req.body.password;
 
 
             fs.writeFile('data/brugere.json', JSON.stringify(data, null, 4), err => {
@@ -70,14 +70,6 @@ router.put('/update', (req, res) => {
     }
 });
 
-/*
-// opdater Bruger
-router.put("/update", (req, res) => {
-    const user = {email: req.body.email, password: req.body.password, oldEmail: req.body.oldEmail};
-    db.updateUser(user);
-    res.status(200).send("bruger er opdateret");
-  });
-  */
 
 // module.exports bruges til at exportere funktioner og funktionaliteter fra en fil
 module.exports = router;

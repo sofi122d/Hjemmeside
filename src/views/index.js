@@ -1,36 +1,29 @@
 //opdater bruger funktion/
 
-
-const btn = document.getElementById('indsend');
-
-btn.addEventListener('submit', async (e) => {
+const opdaterform = document.querySelector("formOpdater");
+opdaterform,addEventListener("submit", async(e) => {
     e.preventDefault();
 
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("newPassword").value;
 
-      let email = document.getElementById("newEmail").value;
-      let password = document.getElementById("newPassword").value;
-  
-      var update = {
+    var opdater = {
         email: email,
-        password: password,
-        }
+        password: password
+    }
 
-        await fetch("http://localhost:1300/brugere/update", {
+
+    await fetch("http://localhost:1300/brugere/update", {
         method: "PUT",
         headers: {
-          "Content-Type": "application/json",
+            "Content-Type": "application/json",
         },
-        body: JSON.stringify(update),
-
-
-        })
-        .then((res) => res.json())
-        .then(data => {
-            window.location.href = "/index.html";
-            window.alert('Bruger er opdateret');
-        })
-
-        .catch(err => {
-          window.alert("Fejl", err);
-        });
-    });
+        body: JSON.stringify(opdater),
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        window.location.href = "/index.html";
+        window.alert("Brugeren er nu opdateret");
+    })
+});
