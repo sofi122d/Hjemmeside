@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salg</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- Menu bar i toppen -->    
+    <div class="headeren">
+        <img src="logo.png" alt="logo" id="logo">
+        <h1 class="companyName">Buy N' Sell</h1>
+        <hr>
+    
+    
+        <ul class="menulist">
+            <li class="menuitems"><a href="/index.html">Opdater Bruger</a></li>
+            <li class="menuitems"><a href="/salg.html">Opret en ny vare</a></li>
+            <li class="menuitems"><a href="/vare.html">Produkter</a></li>
+            <li class="menuitems"><a href="/opdatervare.html">Opdater Produkter</a></li>
+            <li class="menuitems"><a href="/sletvare.html">Slet Produkter</a></li>
+            <li style="float:right" class="menuitems"><a class="active" href="/profil.html"> Din profil</a></li>
+        </ul>
+    </div>
+
+
+    
+    <!-- Indholdet på siden --> 
+    <h1> SLET PRODUKTER </h1>
+
+    <form id='formSletVare' class="form">
+        <br>
+        <label>Id:</label>
+        <input placeholder="Id" type="number" id="id" class="inputfelt"/>
+        <br>
+        <input value="submit" type="submit" id="indsendVare" class="knapProdukter"/>
+    </form>
+
+    <script src="sletvare.js"></script>
+
+    <script src="./../../index.js"></script>
+</body>
+
+
+</html>
