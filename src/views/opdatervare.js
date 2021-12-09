@@ -1,3 +1,4 @@
+// Opdatervare funktion
 const opdaterform = document.querySelector("formOpdaterVare");
 opdaterform,addEventListener("submit", async(e) => {
     e.preventDefault();
@@ -16,7 +17,6 @@ opdaterform,addEventListener("submit", async(e) => {
         billede: billede
     }
 
-
     await fetch("http://localhost:1300/vare/updates", {
         method: "PUT",
         headers: {
@@ -31,9 +31,3 @@ opdaterform,addEventListener("submit", async(e) => {
         window.alert("Varen er nu opdateret");
     })
 });
-
-
-
-
-
-

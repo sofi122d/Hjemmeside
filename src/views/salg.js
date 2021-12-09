@@ -1,3 +1,4 @@
+// Opret vare funktion
 document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("formCreate").addEventListener("submit", (event) => {
       event.preventDefault();
@@ -37,5 +38,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 });
-
-

@@ -1,12 +1,11 @@
-// logud funktion
+// Log ud funktion
 const logud = () => {
     window.localStorage.clear();
     window.location.reload(true);
-    window.location.replace('/login.html');
   };
 
 
-// slet bruger funktion
+// Slet bruger funktion
 document.addEventListener("DOMContentLoaded", (event) => {
     const user = localStorage.getItem("user");
     if (!user) {
@@ -16,10 +15,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("delete").addEventListener("submit", (event) => {
       event.preventDefault();
 
-      // man parser bruger inputtet i loclastorage til JSON
       const user = JSON.parse(localStorage.getItem("user"));
 
-      // her kalder man endpointet, gennem metoden delete
       fetch("http://localhost:1300/brugere/delete", {
         method: "DELETE",
         headers: {
@@ -28,8 +25,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         body: JSON.stringify(user),
       })
 
-      // responset bliver lavet til html igen
-      // hvis der er response, så skal brugeren blive slettet fra localstorage
         .then((response) => response.json())
         .then((response) => {
           if (response) {
@@ -38,10 +33,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
           }
         })
 
-        // hvis funktionen ikke går igennem, bruges catch til at definere, hvis der så skal ske - her "Fejl opstået"
         .catch(() => {
           window.alert("Fejl opstået");
         });
     });
   });
-

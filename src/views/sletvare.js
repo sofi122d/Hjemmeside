@@ -1,3 +1,4 @@
+// Slet vare funktion
 const sletform = document.querySelector("formSletVare");
 sletform,addEventListener("submit", async(e) => {
     e.preventDefault();
@@ -23,8 +24,3 @@ sletform,addEventListener("submit", async(e) => {
         window.alert("Varen er nu slettet");
     })
 });
-
-
-
-
-

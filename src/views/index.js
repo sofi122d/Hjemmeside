@@ -1,5 +1,4 @@
-//opdater bruger funktion/
-
+//Opdater bruger funktion
 const opdaterform = document.querySelector("formOpdater");
 opdaterform,addEventListener("submit", async(e) => {
     e.preventDefault();

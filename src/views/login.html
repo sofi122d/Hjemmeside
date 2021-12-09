@@ -12,27 +12,29 @@
 <body>
 
     <div class="headeren">
+            <img src="logo.png" alt="logo" id="logo">
+            <h1 class="companyName">Buy N' Sell</h1>
+            <hr>
+        </div>
+        <div class="backgroundBody">
+            <br>
 
-        <img src="logo.png" alt="logo" id="logo">
-        <h1 class="companyName">Buy N' Sell</h1>
-        <hr>
+        <header>
+            <h1>Login</h1>
+        </header>
+
+        <form id='form' action="/login" class="form">
+            Email:
+            <input placeholder="Email" type="email" id="email"/>
+            <br>
+            Password:
+            <input placeholder="Password" type="password" id="password"/>
+            <br>
+            <input value="Submit" type="submit" class="knap"/>
+            <br>
+            Har du ikke en bruger? <a id="mylink" href="./opretbruger.html">Opret din bruger her</a>
+        </form>
     </div>
-
-    <header>
-        <h1>Login</h1>
-    </header>
-
-    <form id='form' action="/login" class="form">
-        Email:
-        <input placeholder="Email" type="email" id="email"/>
-        <br>
-        Password:
-        <input placeholder="Password" type="password" id="password"/>
-        <br>
-        <input value="Submit" type="submit" class="knap"/>
-        <br>
-        Har du ikke en bruger? <a id="mylink" href="./opretbruger.html">Opret din bruger her</a>
-    </form>
 
     <script src="login.js"></script>
     
